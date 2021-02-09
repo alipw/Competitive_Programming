@@ -1,0 +1,2783 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+
+<hea
+>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="X-Csrf-Token" content="25249024069043a9c5
+6
+26ba975fb3b" />
+    <meta i
+="viewport" name="viewport" content="wi
+th=
+evice-wi
+th, initial-scale=0.01" />
+
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/jquery-1.8.3.js"></script>
+    <script type="application/javascript">
+        win
+ow.stan
+aloneContest = false;
+        function a
+justViewport() {
+            var screenWi
+thPx = Math.min($(win
+ow).wi
+th(), win
+ow.screen.wi
+th);
+            var siteWi
+thPx = 1100; // min wi
+th of site
+            var ratio = Math.min(screenWi
+thPx / siteWi
+thPx, 1.0);
+            var viewport = "wi
+th=
+evice-wi
+th, initial-scale=" + ratio;
+            $("#viewport").attr("content", viewport);
+            var style = $("<style>html * { max-height: 1000000px; }</style>");
+            $("html > hea
+").appen
+(style);
+        }
+
+        if (
+            /An
+roi
+|webOS|iPhone|iPa
+|iPo
+|BlackBerry/i.test(navigator.userAgent)
+        ) {
+            a
+justViewport();
+        }
+
+        /* Protection against trailing 
+ot in 
+omain. */
+        let hostLength = win
+ow.location.host.length;
+        if (hostLength > 1 && win
+ow.location.host[hostLength - 1] === ".") {
+            win
+ow.location =
+                win
+ow.location.protocol +
+                "//" +
+                win
+ow.location.host.substring(0, hostLength - 1);
+        }
+    </script>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta http-equiv="profileName" content="f1" />
+    <meta name="google-site-verification" content="OT
+2
+N5x4nS4OPknPI9JFg36fKxjqY0i1PSfFPv_J90" />
+    <meta property="fb:a
+mins" content="100001352546622" />
+    <meta property="og:image" content="//sta.co
+eforces.com/s/98716/images/co
+eforces-telegram-square.png" />
+    <link rel="image_src" href="//sta.co
+eforces.com/s/98716/images/co
+eforces-telegram-square.png" />
+    <meta property="og:title" content="Problem - 1469B - Co
+eforces" />
+    <meta property="og:
+escription" content="" />
+
+    <meta property="og:site_name" content="Co
+eforces" />
+
+    <meta name="cc" content="5b9
+
+4290f
+6b9b2
+5
+c7a4412a90588
+07c4
+c8" />
+
+    <meta name="utc_offset" content="+03:00" />
+    <meta name="verify-reformal" content="f56f99f
+7e087fb6ccb48ef2" />
+    <title>Problem - 1469B - Co
+eforces</title>
+    <meta name="
+escription" content="Co
+eforces. Programming competitions an
+ contests, programming community" />
+    <meta name="keywor
+s"
+        content="programming algorithm contest competition informatics olympia
+s c++ java graphs vkcup" />
+    <meta name="robots" content="in
+ex, follow" />
+
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/font-awesome.min.css" type="text/css"
+        charset="utf-8" />
+
+    <link href="//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic" rel="stylesheet"
+        type="text/css" />
+    <link href="//fonts.googleapis.com/css?family=Cuprum&subset=latin,cyrillic" rel="stylesheet" type="text/css" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="//sta.co
+eforces.com/s/98716/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="//sta.co
+eforces.com/s/98716/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="//sta.co
+eforces.com/s/98716/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="//sta.co
+eforces.com/s/98716/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="//sta.co
+eforces.com/s/98716/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="//sta.co
+eforces.com/s/98716/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="//sta.co
+eforces.com/s/98716/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="//sta.co
+eforces.com/s/98716/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="//sta.co
+eforces.com/s/98716/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="//sta.co
+eforces.com/s/98716/an
+roi
+-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="//sta.co
+eforces.com/s/98716/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="//sta.co
+eforces.com/s/98716/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="//sta.co
+eforces.com/s/98716/favicon-16x16.png" />
+    <link rel="manifest" href="//sta.co
+eforces.com/s/98716/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="//sta.co
+eforces.com/s/98716/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!--CombineResourcesFilter-->
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/prettify.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/clear.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/ttypography.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/problem-statement.css" type="text/css"
+        charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/secon
+-level-menu.css" type="text/css"
+        charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/roun
+box.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/
+atatable.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/table-form.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/topic.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/jquery.jgrowl.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/facebox.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/jquery.wysiwyg.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/jquery.autocomplete.css" type="text/css"
+        charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/co
+eforces.
+atepick.css" type="text/css"
+        charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/colorbox.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/jquery.
+rafts.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/community.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/status.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/css/si
+ebar-menu.css" type="text/css" charset="utf-8" />
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$$$','$$$']], 
+isplayMath: [['$$$$$$','$$$$$$']]}
+      });
+      MathJax.Hub.Register.StartupHook("En
+", function () {
+          Co
+eforces.runMathJaxListeners();
+      });
+    </script>
+    <script type="text/javascript" async
+        src="https://assets.co
+eforces.com/mathjax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+    <!-- /MathJax -->
+
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/prettify/prettify.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/pushstream.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/jquery.lavalamp.min.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/jquery.jgrowl.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/jquery.swipe.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/facebox.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/jquery.wysiwyg.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/controls/wysiwyg.colorpicker.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/controls/wysiwyg.table.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/controls/wysiwyg.image.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/controls/wysiwyg.link.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/ua-parser.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/jquery.
+atepick.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/jquery.ie6blocker.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/jquery.ba-bbq.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/jquery.
+rafts.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/clipboar
+.min.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/autosize.min.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/sjcl.js"></script>
+    <script type="text/javascript" src="/scripts/1412a7f13c
+cf5e
+5ca8ec06eb0912c0/en/co
+eforces-options.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/co
+eforces.js?v=20160131"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/EventCatcher.js?v=20160131"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/js/prepare
+Ver
+ictFormats-en.js"></script>
+    <!--/CombineResourcesFilter-->
+
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/markitup/skins/markitup/style.css" type="text/css"
+        charset="utf-8" />
+    <link rel="stylesheet" href="//sta.co
+eforces.com/s/98716/markitup/sets/mark
+own/style.css" type="text/css"
+        charset="utf-8" />
+
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/markitup/jquery.markitup.js"></script>
+    <script type="text/javascript" src="//sta.co
+eforces.com/s/98716/markitup/sets/mark
+own/set.js"></script>
+
+    <!--[if IE]>
+      <style>
+        #si
+ebar {
+          pa
+
+ing-left: 1em;
+          margin: 1em 1em 1em 0;
+        }
+      </style>
+    <![en
+if]-->
+</hea
+>
+
+<bo
+y class=" ">
+    <span style="
+isplay: none" class="csrf-token" 
+ata-csrf="25249024069043a9c5
+6
+26ba975fb3b">&nbsp;</span>
+
+    <!-- .notificationTextCleaner use
+ in Co
+eforces.showAnnouncements() -->
+    <
+iv class="notificationTextCleaner" style="font-size: 0"></
+iv>
+    <
+iv class="button-up" style="
+        
+isplay: none;
+        opacity: 0.7;
+        wi
+th: 50px;
+        height: 100%;
+        position: fixe
+;
+        left: 0;
+        top: 0;
+        cursor: pointer;
+        text-align: center;
+        line-height: 35px;
+        color: #
+3
+be4;
+        font-weight: bol
+;
+        font-size: 3rem;
+      ">
+        <i class="icon-circle-arrow-up"></i>
+    </
+iv>
+    <
+iv class="ver
+ictPrototypeDiv" style="
+isplay: none"></
+iv>
+
+    <!-- Co
+eforces JavaScripts. -->
+    <script type="text/javascript">
+        String.prototype.hashCo
+e = function () {
+            var hash = 0,
+                i,
+                chr;
+            if (this.length === 0) return hash;
+            for (i = 0; i < this.length; i++) {
+                chr = this.charCo
+eAt(i);
+                hash = (hash << 5) - hash + chr;
+                hash |= 0; // Convert to 32bit integer
+            }
+            return hash;
+        };
+
+        var queryMobile = Co
+eforces.queryString.mobile;
+        if (queryMobile === "true" || queryMobile === "false") {
+            Co
+eforces.putToStorage("useMobile", queryMobile === "true");
+        } else {
+            var useMobile = Co
+eforces.getFromStorage("useMobile");
+            if (useMobile === true || useMobile === false) {
+                if (useMobile != false) {
+                    Co
+eforces.re
+irect(
+                        Co
+eforces.up
+ateUrlParameter(
+                            
+ocument.location.href,
+                            "mobile",
+                            useMobile
+                        )
+                    );
+                }
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        if (win
+ow.parent.frames.length > 0) {
+            win
+ow.stop();
+        }
+    </script>
+
+    <script type="text/javascript">
+        win
+ow.fbAsyncInit = function () {
+            FB.init({
+                appI
+: "554666954583323",
+                xfbml: true,
+                version: "v2.8",
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function (
+, s, i
+) {
+            var js,
+                fjs = 
+.getElementsByTagName(s)[0];
+            if (
+.getElementByI
+(i
+)) {
+                return;
+            }
+            js = 
+.createElement(s);
+            js.i
+ = i
+;
+            js.src = "//connect.facebook.net/en_US/s
+k.js";
+            fjs.parentNo
+e.insertBefore(js, fjs);
+        })(
+ocument, "script", "facebook-jss
+k");
+    </script>
+
+    <script type="text/javascript">
+        $(
+ocument).rea
+y(function () {
+            (function () {
+                jQuery.expr[":"].containsCI = function (elem, in
+ex, match) {
+                    return (
+                        !match ||
+                        !match.length ||
+                        match.length < 4 ||
+                        !match[3] ||
+                        (elem.textContent || elem.innerText || jQuery(elem).text() || "")
+                            .toLowerCase()
+                            .in
+exOf(match[3].toLowerCase()) >= 0
+                    );
+                };
+            })(jQuery);
+
+            $.ajaxPrefilter(function (options, originalOptions, xhr) {
+                var csrf = Co
+eforces.getCsrfToken();
+
+                if (csrf) {
+                    var 
+ata = originalOptions.
+ata;
+                    if (originalOptions.
+ata !== un
+efine
+) {
+                        if (
+                            Object.prototype.toString.call(originalOptions.
+ata) ===
+                            "[object String]"
+                        ) {
+                            
+ata = $.
+eparam(originalOptions.
+ata);
+                        }
+                    } else {
+                        
+ata = {};
+                    }
+                    options.
+ata = $.param($.exten
+(
+ata, { csrf_token: csrf }));
+                }
+            });
+
+            win
+ow.getCo
+eforcesServerTime = function (callback) {
+                $.post("/
+ata/time", {}, callback, "json");
+            };
+
+            win
+ow.up
+ateTypography = function () {
+                $("
+iv.ttypography co
+e").a
+
+Class("tt");
+                $("
+iv.ttypography pre>co
+e")
+                    .a
+
+Class("prettyprint")
+                    .removeClass("tt");
+                $("
+iv.ttypography table").a
+
+Class("bor
+ertable");
+                prettyPrint();
+            };
+
+            $.ajaxSetup({
+                scriptCharset: "utf-8",
+                contentType: "application/x-www-form-urlenco
+e
+; charset=UTF-8",
+                hea
+ers: {
+                    "X-Csrf-Token": Co
+eforces.getCsrfToken(),
+                },
+            });
+
+            win
+ow.up
+ateTypography();
+
+            Co
+eforces.signForms();
+
+            setTimeout(function () {
+                $(".secon
+-level-menu-list").lavaLamp({
+                    fx: "backout",
+                    spee
+: 700,
+                });
+            }, 100);
+
+            Co
+eforces.count
+own();
+            $("a[rel='photobox']").colorbox();
+
+            function showAnnouncements(json) {
+                //info("j=" + JSON.stringify(json));
+
+                if (json.t != "a") {
+                    return;
+                }
+
+                setTimeout(function () {
+                    Co
+eforces.showAnnouncements(json.
+, "en");
+                }, Math.ran
+om() * 500);
+            }
+
+            function showEventCatcherUserMessage(json) {
+                if (json.t == "s") {
+                    var points = json.
+[5];
+                    var passe
+TestCount = json.
+[7];
+                    var ju
+ge
+TestCount = json.
+[8];
+                    var ver
+ict = prepare
+Ver
+ictFormats[json.
+[12]];
+                    var ver
+ictPrototypeDiv = $(".ver
+ictPrototypeDiv");
+                    ver
+ictPrototypeDiv.html(ver
+ict);
+                    if (ju
+ge
+TestCount != null && ju
+ge
+TestCount != un
+efine
+) {
+                        ver
+ictPrototypeDiv
+                            .fin
+(".ver
+ict-format-ju
+ge
+")
+                            .text(ju
+ge
+TestCount);
+                    }
+                    if (passe
+TestCount != null && passe
+TestCount != un
+efine
+) {
+                        ver
+ictPrototypeDiv
+                            .fin
+(".ver
+ict-format-passe
+")
+                            .text(passe
+TestCount);
+                    }
+                    if (points != null && points != un
+efine
+) {
+                        ver
+ictPrototypeDiv.fin
+(".ver
+ict-format-points").text(points);
+                    }
+                    Co
+eforces.showMessage(ver
+ictPrototypeDiv.text());
+                }
+            }
+
+            $(".clickable-title").each(function () {
+                var title = $(this).attr("
+ata-title");
+                if (title) {
+                    var tmp = 
+ocument.createElement("DIV");
+                    tmp.innerHTML = title;
+                    $(this).attr("title", tmp.textContent || tmp.innerText || "");
+                }
+            });
+
+            $(".clickable-title")
+                .click(function () {
+                    var title = $(this).attr("
+ata-title");
+                    if (title) {
+                        Co
+eforces.alert(title);
+                    } else {
+                        Co
+eforces.alert($(this).attr("title"));
+                    }
+                })
+                .css("position", "relative")
+                .css("bottom", "3px");
+
+            Co
+eforces.showDelaye
+Message();
+
+            Co
+eforces.reformatTimes();
+
+            //Co
+eforces.initializePubSub();
+            if (win
+ow.co
+eforcesOptions.subscribeServerUrl) {
+                win
+ow.eventCatcher = new EventCatcher(
+                    win
+ow.co
+eforcesOptions.subscribeServerUrl,
+                    [
+                        Co
+eforces.getGlobalChannel(),
+                        Co
+eforces.getUserChannel(),
+                        Co
+eforces.getUserShowMessageChannel(),
+                        Co
+eforces.getContestChannel(),
+                        Co
+eforces.getParticipantChannel(),
+                        Co
+eforces.getTalkChannel(),
+                    ]
+                );
+
+                if (Co
+eforces.getParticipantChannel()) {
+                    win
+ow.eventCatcher.subscribe(
+                        Co
+eforces.getParticipantChannel(),
+                        function (json) {
+                            showAnnouncements(json);
+                        }
+                    );
+                }
+
+                if (Co
+eforces.getContestChannel()) {
+                    win
+ow.eventCatcher.subscribe(
+                        Co
+eforces.getContestChannel(),
+                        function (json) {
+                            showAnnouncements(json);
+                        }
+                    );
+                }
+
+                if (Co
+eforces.getGlobalChannel()) {
+                    win
+ow.eventCatcher.subscribe(
+                        Co
+eforces.getGlobalChannel(),
+                        function (json) {
+                            showAnnouncements(json);
+                        }
+                    );
+                }
+
+                if (Co
+eforces.getUserChannel()) {
+                    win
+ow.eventCatcher.subscribe(
+                        Co
+eforces.getUserChannel(),
+                        function (json) {
+                            showAnnouncements(json);
+                        }
+                    );
+                }
+
+                if (Co
+eforces.getUserShowMessageChannel()) {
+                    win
+ow.eventCatcher.subscribe(
+                        Co
+eforces.getUserShowMessageChannel(),
+                        function (json) {
+                            showEventCatcherUserMessage(json);
+                        }
+                    );
+                }
+            }
+
+            Co
+eforces.setupContestTimes("/
+ata/contests");
+            Co
+eforces.setupSpoilers();
+            Co
+eforces.setupTutorials("/
+ata/problemTutorial");
+        });
+    </script>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(["_setAccount", "UA-743380-5"]);
+        _gaq.push(["_trackPageview"]);
+
+        (function () {
+            var ga = 
+ocument.createElement("script");
+            ga.type = "text/javascript";
+            ga.async = true;
+            ga.src =
+                (
+ocument.location.protocol == "https:"
+                    ? "https://ssl"
+                    : "http://www") + ".google-analytics.com/ga.js";
+            var s = 
+ocument.getElementsByTagName("script")[0];
+            s.parentNo
+e.insertBefore(ga, s);
+        })();
+    </script>
+
+    <
+iv i
+="bo
+y">
+        <
+iv class="si
+e-bell" style="
+          visibility: hi
+
+en;
+          
+isplay: none;
+          opacity: 0.7;
+          wi
+th: 40px;
+          position: fixe
+;
+          right: 0;
+          top: 0;
+          cursor: pointer;
+          text-align: center;
+          line-height: 35px;
+          color: #
+3
+be4;
+          font-weight: bol
+;
+          font-size: 1.5rem;
+        ">
+            <span class="icon-stack" style="wi
+th: 100%">
+                <i class="icon-circle icon-stack-base"></i>
+                <i class="icon-bell-alt icon-light"></i>
+            </span>
+            <br />
+            <span class="si
+e-bell__count" style="position: relative; top: -10px"></span>
+        </
+iv>
+
+        <
+iv i
+="hea
+er" style="position: relative">
+            <
+iv style="float: left">
+                <
+iv style="pa
+
+ing: 0.5em 0 0 2px; color: #00a651">
+                    <a href="/harbourspace"><img style="position: relative; bottom: 6px"
+                            src="//assets.co
+eforces.com/images/hsu.png" /></a>
+                </
+iv>
+            </
+iv>
+            <
+iv class="lang-chooser">
+                <
+iv style="text-align: right">
+                    <a href="?locale=en"><img src="//sta.co
+eforces.com/s/98716/images/flags/24/gb.png"
+                            title="In English" alt="In English" /></a>
+                    <a href="?locale=ru"><img src="//sta.co
+eforces.com/s/98716/images/flags/24/ru.png"
+                            title="По-русски" alt="По-русски" /></a>
+                </
+iv>
+
+                <
+iv>
+                    <a href="/enter?back=%2Fproblemset%2Fproblem%2F1469%2FB">Enter</a>
+                    |
+                    <a href="/register">Register</a>
+                </
+iv>
+            </
+iv>
+            <br style="clear: both" />
+        </
+iv>
+
+        <
+iv class="roun
+box menu-box" style="">
+            <
+iv class="roun
+box-lt">&nbsp;</
+iv>
+            <
+iv class="roun
+box-rt">&nbsp;</
+iv>
+            <
+iv class="roun
+box-lb">&nbsp;</
+iv>
+            <
+iv class="roun
+box-rb">&nbsp;</
+iv>
+            <
+iv class="menu-list-container">
+                <ul class="menu-list main-menu-list">
+                    <li class=""><a href="/">Home</a></li>
+                    <li class=""><a href="/top">Top</a></li>
+                    <li class=""><a href="/contests">Contests</a></li>
+                    <li class=""><a href="/gyms">Gym</a></li>
+                    <li class="current"><a href="/problemset">Problemset</a></li>
+                    <li class=""><a href="/groups">Groups</a></li>
+                    <li class=""><a href="/ratings">Rating</a></li>
+                    <li class="">
+                        <a href="/e
+u/courses"><span class="e
+u-menu-item">E
+u</span></a>
+                    </li>
+                    <li class=""><a href="/apiHelp">API</a></li>
+                    <li class=""><a href="/calen
+ar">Calen
+ar</a></li>
+                    <li class=""><a href="/help">Help</a></li>
+                </ul>
+                <form metho
+="post" action="/search">
+                    <input type="hi
+
+en" name="csrf_token" value="25249024069043a9c5
+6
+26ba975fb3b" />
+                    <input class="search" name="query" 
+ata-isPlacehol
+er="true" value="" />
+                </form>
+                <br style="clear: both" />
+            </
+iv>
+        </
+iv>
+
+        <script type="text/javascript">
+            $(
+ocument).rea
+y(function () {
+                $("input.search").focus(function () {
+                    if ($(this).attr("
+ata-isPlacehol
+er") === "true") {
+                        $(this).val("");
+                        $(this).removeAttr("
+ata-isPlacehol
+er");
+                    }
+                });
+            });
+        </script>
+        <br style="height: 3em; clear: both" />
+
+        <
+iv style="position: relative">
+            <
+iv i
+="si
+ebar">
+                <
+iv class="roun
+box si
+ebox" style="">
+                    <
+iv class="roun
+box-lt">&nbsp;</
+iv>
+                    <
+iv class="roun
+box-rt">&nbsp;</
+iv>
+                    <table class="rtable">
+                        <tbo
+y>
+                            <tr>
+                                <th class="left" style="wi
+th: 100%">
+                                    <a style="color: black" href="/contest/1469">E
+ucational Co
+eforces Roun
+ 101 (Rate
+
+                                        for Div. 2)</a>
+                                </th>
+                            </tr>
+                            <tr>
+                                <t
+ class="left bottom" colspan="1">
+                                    <span class="contest-state-phase">Finishe
+</span>
+                                </t
+>
+                            </tr>
+                        </tbo
+y>
+                    </table>
+                </
+iv>
+
+                <
+iv class="roun
+box si
+ebox" style="">
+                    <
+iv class="roun
+box-lt">&nbsp;</
+iv>
+                    <
+iv class="roun
+box-rt">&nbsp;</
+iv>
+                    <
+iv class="caption title
+">
+                        &rarr; Virtual participation
+                        <
+iv class="top-links"></
+iv>
+                    </
+iv>
+
+                    <
+iv>
+                        <
+iv style="margin: 1em; font-size: 0.8em">
+                            Virtual contest is a way to take part in past contest, as close
+                            as possible to participation on time. It is supporte
+ only ICPC
+                            mo
+e for virtual contests. If you've seen these problems, a
+                            virtual contest is not for you - solve these problems in the
+                            archive. If you just want to solve some problem from a contest,
+                            a virtual contest is not for you - solve this problem in the
+                            archive. Never use someone else's co
+e, rea
+ the tutorials or
+                            communicate with other person 
+uring a virtual contest.
+                        </
+iv>
+
+                        <
+iv style="text-align: center; margin: 1em">
+                            <form action="/contest/1469/virtual" metho
+="get">
+                                <input type="submit" name="submit" value="Start virtual contest"
+                                    style="pa
+
+ing: 0 0.5em" />
+                            </form>
+                        </
+iv>
+                    </
+iv>
+                </
+iv>
+
+                <
+iv class="roun
+box si
+ebox" style="">
+                    <
+iv class="roun
+box-lt">&nbsp;</
+iv>
+                    <
+iv class="roun
+box-rt">&nbsp;</
+iv>
+                    <
+iv class="caption title
+">
+                        &rarr; Problem tags
+                        <
+iv class="top-links"></
+iv>
+                    </
+iv>
+                    <
+iv style="pa
+
+ing: 0.5em">
+                        <
+iv class="roun
+box" style="
+                  margin: 2px;
+                  pa
+
+ing: 0 3px 2px 3px;
+                  backgroun
+-color: #f0f0f0;
+                  float: left;
+                ">
+                            <
+iv class="roun
+box-lt">&nbsp;</
+iv>
+                            <
+iv class="roun
+box-rt">&nbsp;</
+iv>
+                            <
+iv class="roun
+box-lb">&nbsp;</
+iv>
+                            <
+iv class="roun
+box-rb">&nbsp;</
+iv>
+                            <span class="tag-box" style="font-size: 1.2rem" title="Gree
+y algorithms">
+                                gree
+y
+                            </span>
+                        </
+iv>
+                        <
+iv class="roun
+box" style="
+                  margin: 2px;
+                  pa
+
+ing: 0 3px 2px 3px;
+                  backgroun
+-color: #f0f0f0;
+                  float: left;
+                ">
+                            <
+iv class="roun
+box-lt">&nbsp;</
+iv>
+                            <
+iv class="roun
+box-rt">&nbsp;</
+iv>
+                            <
+iv class="roun
+box-lb">&nbsp;</
+iv>
+                            <
+iv class="roun
+box-rb">&nbsp;</
+iv>
+                            <span class="tag-box" style="font-size: 1.2rem" title="Difficulty">
+                                *1000
+                            </span>
+                        </
+iv>
+                        <
+iv style="clear: both; text-align: right; font-size: 1.1rem">
+                            <span title="Please login into the Co
+eforces" class="notice">No tag e
+it access</span>
+                        </
+iv>
+                    </
+iv>
+                </
+iv>
+
+                <form i
+="a
+
+TagForm" action="/
+ata/problemTags" metho
+="post" style="
+isplay: none">
+                    <input type="hi
+
+en" name="csrf_token" value="25249024069043a9c5
+6
+26ba975fb3b" />
+                    <input name="action" type="hi
+
+en" value="a
+
+Tag" />
+                    <input name="problemI
+" type="hi
+
+en" value="847527" />
+                    <input name="tagName" type="hi
+
+en" value="" />
+                </form>
+
+                <form i
+="removeTagForm" action="/
+ata/problemTags" metho
+="post" style="
+isplay: none">
+                    <input type="hi
+
+en" name="csrf_token" value="25249024069043a9c5
+6
+26ba975fb3b" />
+                    <input name="action" type="hi
+
+en" value="removeTag" />
+                    <input name="problemI
+" type="hi
+
+en" value="847527" />
+                    <input name="tagName" type="hi
+
+en" value="" />
+                </form>
+
+                <script type="text/javascript">
+                    $(".tag-box img").click(function () {
+                        var tagName = $(this).attr("value");
+                        Co
+eforces.confirm(
+                            "Are you sure you want to remove this tag?",
+                            function () {
+                                $("#removeTagForm input[name=tagName]").val(tagName);
+                                $("#removeTagForm").submit();
+                            },
+                            function () { },
+                            "Yes",
+                            "No"
+                        );
+                    });
+
+                    $("#a
+
+TagLink").click(function () {
+                        $(this).hi
+e();
+                        $("#a
+
+TagLabel").show();
+                        return false;
+                    });
+
+                    $("#a
+
+TagSelect").change(function () {
+                        var tagName = $(this).val();
+                        if (tagName === "") {
+                            $("#a
+
+TagLabel").hi
+e();
+                            $("#a
+
+TagLink").show();
+                        } else {
+                            $("#a
+
+TagForm input[name=tagName]").val(tagName);
+                            $("#a
+
+TagForm").submit();
+                        }
+                    });
+                </script>
+
+                <style type="text/css">
+                    #new-resource-form tr t
+ {
+                        pa
+
+ing-top: 0.5em;
+                    }
+
+                    #new-resource-form input:not([type="submit"]) {
+                        font-size: 0.8em;
+                    }
+
+                    #new-resource-form select {
+                        font-size: 0.8em;
+                    }
+                </style>
+                <
+iv class="roun
+box si
+ebox si
+ebar-menu" style="">
+                    <
+iv class="roun
+box-lt">&nbsp;</
+iv>
+                    <
+iv class="roun
+box-rt">&nbsp;</
+iv>
+                    <
+iv class="caption title
+">
+                        &rarr; Contest materials
+                        <
+iv class="top-links"></
+iv>
+                    </
+iv>
+                    <ul>
+                        <li>
+                            <span>
+                                <a href="/blog/entry/86004" title="E
+ucational Co
+eforces Roun
+ 101 [Rate
+ for Div. 2]"
+                                    target="_blank">Announcement</a>
+                            </span>
+                            <span style="float: right">
+                                <img class="
+elete-resource-link" resourceI
+s="12713:12714" resourceName="Announcement"
+                                    resourceManual="true"
+                                    src="//sta.co
+eforces.com/s/98716/images/icons/close-10x10.png" style="
+                      position: relative;
+                      bottom: -1px;
+                      left: 1px;
+                      cursor: pointer;
+                    " />
+                            </span>
+                            <
+iv style="clear: both"></
+iv>
+                        </li>
+                        <li>
+                            <span>
+                                <a href="/blog/entry/86082" title="E
+ucational Co
+eforces Roun
+ 101 E
+itorial"
+                                    target="_blank">Tutorial</a>
+                            </span>
+                            <span style="float: right">
+                                <img class="
+elete-resource-link" resourceI
+s="12737:12738" resourceName="Tutorial"
+                                    resourceManual="true"
+                                    src="//sta.co
+eforces.com/s/98716/images/icons/close-10x10.png" style="
+                      position: relative;
+                      bottom: -1px;
+                      left: 1px;
+                      cursor: pointer;
+                    " />
+                            </span>
+                            <
+iv style="clear: both"></
+iv>
+                        </li>
+                    </ul>
+                </
+iv>
+            </
+iv>
+            <
+iv i
+="pageContent" class="content-with-si
+ebar">
+                <
+iv class="secon
+-level-menu">
+                    <ul class="secon
+-level-menu-list">
+                        <li class="current selecte
+Lava">
+                            <a href="/problemset">Problems</a>
+                        </li>
+                        <li><a href="/problemset/submit">Submit</a></li>
+                        <li><a href="/problemset/status">Status</a></li>
+                        <li><a href="/problemset/stan
+ings">Stan
+ings</a></li>
+                        <li><a href="/problemset/customtest">Custom test</a></li>
+                    </ul>
+                </
+iv>
+
+                <style>
+                    #facebox .content:has(.
+iff-popup) {
+                        wi
+th: 90vw;
+                        max-wi
+th: 120rem !important;
+                    }
+
+                    .
+iff-popup {
+                        wi
+th: 90vw;
+                        max-wi
+th: 120rem !important;
+                        
+isplay: none;
+                        overflow: auto;
+                    }
+
+                    .input-output-copier {
+                        font-size: 1.2rem;
+                        float: right;
+                        color: #888 !important;
+                        cursor: pointer;
+                        bor
+er: 1px soli
+ rgb(185, 185, 185);
+                        pa
+
+ing: 3px;
+                        margin: 1px;
+                        line-height: 1.1rem;
+                        text-transform: none;
+                    }
+
+                    .input-output-copier:hover {
+                        backgroun
+-color: #
+ef;
+                    }
+
+                    .test-explanation textarea {
+                        wi
+th: 100%;
+                        height: 1.5em;
+                    }
+
+                    .pen
+ing-submission-message {
+                        color: 
+arkorange !important;
+                    }
+                </style>
+                <script>
+                    const OPENING_SPACE = String.fromCharCo
+e(1001);
+                    const CLOSING_SPACE = String.fromCharCo
+e(1002);
+
+                    const no
+eToText = function (no
+e, pre) {
+                        let result = [];
+
+                        if (
+                            no
+e.tagName === "SCRIPT" ||
+                            no
+e.tagName === "math" ||
+                            (no
+e.classList &&
+                                no
+e.classList.contains("input-output-copier"))
+                        )
+                            return [];
+
+                        if (no
+e.tagName === "NOBR") {
+                            result.push(OPENING_SPACE);
+                        }
+
+                        if (no
+e.no
+eType === No
+e.TEXT_NODE) {
+                            let s = no
+e.textContent;
+                            if (!pre) {
+                                s = s.replace(/\s+/g, " ");
+                            }
+                            if (s.length > 0) {
+                                result.push(s);
+                            }
+                        }
+
+                        if (pre && no
+e.tagName === "BR") {
+                            result.push("\n");
+                        }
+
+                        no
+e.chil
+No
+es.forEach(function (chil
+) {
+                            result.push(no
+eToText(chil
+, no
+e.tagName === "PRE").join(""));
+                        });
+
+                        if (
+                            no
+e.tagName === "DIV" ||
+                            no
+e.tagName === "P" ||
+                            no
+e.tagName === "PRE" ||
+                            no
+e.tagName === "UL" ||
+                            no
+e.tagName === "LI"
+                        ) {
+                            result.push("\n");
+                        }
+
+                        if (no
+e.tagName === "NOBR") {
+                            result.push(CLOSING_SPACE);
+                        }
+
+                        return result;
+                    };
+
+                    const isSpecial = function (c) {
+                        return (
+                            c === "," || c === "." || c === ";" || c === ")" || c === " "
+                        );
+                    };
+
+                    const convertStatementToText = function (statmentNo
+e) {
+                        const text = no
+eToText(statmentNo
+e, false)
+                            .join("")
+                            .replace(/ +/g, " ")
+                            .replace(/\n\n+/g, "\n\n");
+                        let result = [];
+                        for (let i = 0; i < text.length; i++) {
+                            const c = text.charAt(i);
+                            if (c === OPENING_SPACE) {
+                                if (
+                                    !(
+                                        (i > 0 && text.charAt(i - 1) === "(") ||
+                                        (result.length > 0 && result[result.length - 1] === " ")
+                                    )
+                                ) {
+                                    result.push("+");
+                                }
+                            } else if (c === CLOSING_SPACE) {
+                                if (!(i + 1 < text.length && isSpecial(text.charAt(i + 1)))) {
+                                    result.push("-");
+                                }
+                            } else {
+                                result.push(c);
+                            }
+                        }
+                        return result
+                            .join("")
+                            .split("\n")
+                            .map((value) => value.trim())
+                            .join("\n");
+                    };
+                </script>
+                <
+iv class="
+iff-popup"></
+iv>
+
+                <
+iv class="problemin
+exhol
+er" problemin
+ex="B"
+                    
+ata-uui
+="ps_ee30a7f
+70f
+74127fbe2207930b7867b58f0589">
+                    <
+iv style="
+                
+isplay: none;
+                margin: 1em 0;
+                text-align: center;
+                position: relative;
+              " class="alert alert-info 
+iff-notifier">
+                        <
+iv>
+                            The problem statement has recently been change
+.
+                            <a class="view-changes" href="#">View the changes.</a>
+                        </
+iv>
+                        <span class="
+iff-notifier-close" style="
+                  position: absolute;
+                  top: 0.2em;
+                  right: 0.3em;
+                  cursor: pointer;
+                  font-size: 1.4em;
+                ">&times;</span>
+                    </
+iv>
+                    <
+iv class="ttypography">
+                        <
+iv class="problem-statement">
+                            <
+iv class="hea
+er">
+                                <
+iv class="title">B. Re
+ an
+ Blue</
+iv>
+                                <
+iv class="time-limit">
+                                    <
+iv class="property-title">time limit per test</
+iv>
+                                    2 secon
+s
+                                </
+iv>
+                                <
+iv class="memory-limit">
+                                    <
+iv class="property-title">memory limit per test</
+iv>
+                                    512 megabytes
+                                </
+iv>
+                                <
+iv class="input-file">
+                                    <
+iv class="property-title">input</
+iv>
+                                    stan
+ar
+ input
+                                </
+iv>
+                                <
+iv class="output-file">
+                                    <
+iv class="property-title">output</
+iv>
+                                    stan
+ar
+ output
+                                </
+iv>
+                            </
+iv>
+                            <
+iv>
+                                <p>
+                                    Monocarp ha
+ a sequence $$$a$$$ consisting of $$$n + m$$$
+                                    integers $$$a_1, a_2, \
+ots, a_{n + m}$$$. He painte
+ the
+                                    elements into two colors, re
+ an
+ blue; $$$n$$$ elements
+                                    were painte
+ re
+, all other $$$m$$$ elements were painte
+
+                                    blue.
+                                </p>
+                                <p>
+                                    After painting the elements, he has written two sequences
+                                    $$$r_1, r_2, \
+ots, r_n$$$ an
+ $$$b_1, b_2, \
+ots, b_m$$$.
+                                    The sequence $$$r$$$ consiste
+ of all re
+ elements of
+                                    $$$a$$$
+                                    <span class="tex-font-style-bf">in the or
+er they appeare
+ in $$$a$$$</span>;
+                                    similarly, the sequence $$$b$$$ consiste
+ of all blue
+                                    elements of $$$a$$$
+                                    <span class="tex-font-style-bf">in the or
+er they appeare
+ in $$$a$$$ as
+                                        well</span>.
+                                </p>
+                                <p>
+                                    Unfortunately, the original sequence was lost, an
+ Monocarp
+                                    only has the sequences $$$r$$$ an
+ $$$b$$$. He wants to
+                                    restore the original sequence. In case there are multiple
+                                    ways to restore it, he wants to choose a way to restore that
+                                    maximizes the value of
+                                </p>
+                                <p>
+                                    $$$$$$f(a) = \max(0, a_1, (a_1 + a_2), (a_1 + a_2 + a_3),
+                                    \
+ots, (a_1 + a_2 + a_3 + \
+ots + a_{n + m}))$$$$$$
+                                </p>
+                                <p>
+                                    Help Monocarp to calculate the maximum possible value of
+                                    $$$f(a)$$$.
+                                </p>
+                            </
+iv>
+                            <
+iv class="input-specification">
+                                <
+iv class="section-title">Input</
+iv>
+                                <p>
+                                    The first line contains one integer $$$t$$$ ($$$1 \le t \le
+                                    1000$$$) — the number of test cases. Then the test cases
+                                    follow. Each test case consists of four lines.
+                                </p>
+                                <p>
+                                    The first line of each test case contains one integer
+                                    $$$n$$$ ($$$1 \le n \le 100$$$).
+                                </p>
+                                <p>
+                                    The secon
+ line contains $$$n$$$ integers $$$r_1, r_2,
+                                    \
+ots, r_n$$$ ($$$-100 \le r_i \le 100$$$).
+                                </p>
+                                <p>
+                                    The thir
+ line contains one integer $$$m$$$ ($$$1 \le m \le
+                                    100$$$).
+                                </p>
+                                <p>
+                                    The fourth line contains $$$m$$$ integers $$$b_1, b_2,
+                                    \
+ots, b_m$$$ ($$$-100 \le b_i \le 100$$$).
+                                </p>
+                            </
+iv>
+                            <
+iv class="output-specification">
+                                <
+iv class="section-title">Output</
+iv>
+                                <p>
+                                    For each test case, print one integer — the maximum possible
+                                    value of $$$f(a)$$$.
+                                </p>
+                            </
+iv>
+                            <
+iv class="sample-tests">
+                                <
+iv class="section-title">Example</
+iv>
+                                <
+iv class="sample-test">
+                                    <
+iv class="input">
+                                        <
+iv class="title">Input</
+iv>
+                                        <pre>
+4
+4
+6 -5 7 -3
+3
+2 3 -4
+2
+1 1
+4
+10 -3 2 2
+5
+-1 -2 -3 -4 -5
+5
+-1 -2 -3 -4 -5
+1
+0
+1
+0
+</pre>
+                                    </
+iv>
+                                    <
+iv class="output">
+                                        <
+iv class="title">Output</
+iv>
+                                        <pre>
+13
+13
+0
+0
+</pre>
+                                    </
+iv>
+                                </
+iv>
+                            </
+iv>
+                            <
+iv class="note">
+                                <
+iv class="section-title">Note</
+iv>
+                                <p>
+                                    In the explanations for the sample test cases, re
+ elements
+                                    are marke
+ as <span class="tex-font-style-bf">bol
+</span>.
+                                </p>
+                                <p>
+                                    In the first test case, one of the possible sequences
+                                    $$$a$$$ is $$$[\mathbf{6}, 2, \mathbf{-5}, 3, \mathbf{7},
+                                    \mathbf{-3}, -4]$$$.
+                                </p>
+                                <p>
+                                    In the secon
+ test case, one of the possible sequences
+                                    $$$a$$$ is $$$[10, \mathbf{1}, -3, \mathbf{1}, 2, 2]$$$.
+                                </p>
+                                <p>
+                                    In the thir
+ test case, one of the possible sequences
+                                    $$$a$$$ is $$$[\mathbf{-1}, -1, -2, -3, \mathbf{-2}, -4, -5,
+                                    \mathbf{-3}, \mathbf{-4}, \mathbf{-5}]$$$.
+                                </p>
+                                <p>
+                                    In the fourth test case, one of the possible sequences
+                                    $$$a$$$ is $$$[0, \mathbf{0}]$$$.
+                                </p>
+                            </
+iv>
+                        </
+iv>
+                        <p></p>
+                    </
+iv>
+                </
+iv>
+
+                <script>
+                    $(function () {
+                        Co
+eforces.a
+
+MathJaxListener(function () {
+                            let $problem = $("
+iv[problemin
+ex=B]");
+                            let uui
+ = $problem.attr("
+ata-uui
+");
+                            let statementText = convertStatementToText(
+                                $problem.fin
+(".ttypography").get(0)
+                            );
+
+                            let previousStatementText = Co
+eforces.getFromStorage(uui
+);
+                            if (previousStatementText) {
+                                if (previousStatementText !== statementText) {
+                                    $problem.fin
+(".
+iff-notifier").show();
+
+                                    $problem.fin
+(".
+iff-notifier-close").click(function () {
+                                        Co
+eforces.putToStorageTtl(
+                                            uui
+,
+                                            statementText,
+                                            6 * 60 * 60
+                                        );
+                                        $problem.fin
+(".
+iff-notifier").hi
+e();
+                                    });
+
+                                    $problem.fin
+("a.view-changes").click(function () {
+                                        $.post(
+                                            "/
+ata/
+iff",
+                                            {
+                                                action: "getDiff",
+                                                a: previousStatementText,
+                                                b: statementText,
+                                            },
+                                            function (result) {
+                                                if (result["success"] === "true") {
+                                                    Co
+eforces.facebox(
+                                                        ".
+iff-popup",
+                                                        "//sta.co
+eforces.com/s/98716"
+                                                    );
+                                                    $("#facebox .
+iff-popup").html(result["
+iff"]);
+                                                }
+                                            },
+                                            "json"
+                                        );
+                                    });
+                                }
+                            } else {
+                                Co
+eforces.putToStorageTtl(uui
+, statementText, 6 * 60 * 60);
+                            }
+                        });
+                    });
+                </script>
+
+                <script type="text/javascript">
+                    $(
+ocument).rea
+y(function () {
+                        win
+ow.change
+Tests = new Set();
+                        console.log("Initialize
+ win
+ow.change
+Tests.");
+
+                        function en
+sWith(string, suffix) {
+                            return (
+                                string.in
+exOf(suffix, string.length - suffix.length) !== -1
+                            );
+                        }
+
+                        var inputFileDiv = $("
+iv.input-file");
+                        var inputFile = inputFileDiv.text();
+                        var outputFileDiv = $("
+iv.output-file");
+                        var outputFile = outputFileDiv.text();
+
+                        if (
+                            !en
+sWith(inputFile, "stan
+ar
+ input") &&
+                            !en
+sWith(inputFile, "stan
+ar
+ input")
+                        ) {
+                            inputFileDiv.attr("style", "font-weight: bol
+");
+                        }
+
+                        if (
+                            !en
+sWith(outputFile, "stan
+ar
+ output") &&
+                            !en
+sWith(outputFile, "stan
+ar
+ output")
+                        ) {
+                            outputFileDiv.attr("style", "font-weight: bol
+");
+                        }
+
+                        var titleDiv = $("
+iv.hea
+er 
+iv.title");
+
+                        String.prototype.replaceAll = function (search, replace) {
+                            return this.split(search).join(replace);
+                        };
+
+                        $(".sample-test .title").each(function () {
+                            var preI
+ = ("i
+" + Math.ran
+om()).replaceAll(".", "0");
+                            var cpyI
+ = ("i
+" + Math.ran
+om()).replaceAll(".", "0");
+
+                            $(this).parent().fin
+("pre").attr("i
+", preI
+);
+                            var $copy = $(
+                                "<
+iv title='Copy' 
+ata-clipboar
+-target='#" +
+                                preI
+ +
+                                "' i
+='" +
+                                cpyI
+ +
+                                "' class='input-output-copier'>Copy</
+iv>"
+                            );
+                            $(this).appen
+($copy);
+
+                            var clipboar
+ = new Clipboar
+("#" + cpyI
+, {
+                                text: function (trigger) {
+                                    return Co
+eforces.filterClipboar
+Text(
+                                        
+ocument.querySelector("#" + preI
+).innerText
+                                    );
+                                },
+                            });
+
+                            var isInput = $(this).parent().hasClass("input");
+
+                            clipboar
+.on("success", function (e) {
+                                if (isInput) {
+                                    Co
+eforces.showMessage(
+                                        "The example input has been copie
+ into the clipboar
+"
+                                    );
+                                } else {
+                                    Co
+eforces.showMessage(
+                                        "The example output has been copie
+ into the clipboar
+"
+                                    );
+                                }
+                                e.clearSelection();
+                            });
+                        });
+
+                        $(".test-form-item input").change(function () {
+                            a
+
+Pen
+ingSubmissionMessage(
+                                $($(this).closest("form")),
+                                "You change
+ the answer, 
+o not forget to submit it if you want to save the changes"
+                            );
+                            var in
+ex = $(this)
+                                .closest(".problemin
+exhol
+er")
+                                .attr("problemin
+ex");
+                            var test = "";
+                            $(this)
+                                .closest("form input")
+                                .each(function () {
+                                    var test_ = $(this).attr("name");
+                                    if (test_ && test_.substring(0, 4) === "test") {
+                                        test = test_;
+                                    }
+                                });
+                            if (in
+ex.length > 0 && test.length > 0) {
+                                var in
+exTest = in
+ex + "::" + test;
+                                win
+ow.change
+Tests.a
+
+(in
+exTest);
+                            }
+                        });
+
+                        $(win
+ow).on("beforeunloa
+", function () {
+                            if (win
+ow.change
+Tests.size > 0) {
+                                return "Dialog text here";
+                            }
+                        });
+
+                        autosize($(".test-explanation textarea"));
+                    });
+                </script>
+            </
+iv>
+        </
+iv>
+        <br style="clear: both" />
+        <
+iv i
+="footer">
+            <
+iv>
+                <a href="https://co
+eforces.com/">Co
+eforces</a> (c) Copyright
+                2010-2021 Mike Mirzayanov
+            </
+iv>
+            <
+iv>The only programming contests Web 2.0 platform</
+iv>
+            <
+iv>
+                Server time:
+                <span class="format-timewithsecon
+s" 
+ata-locale="en">Jan/01/2021 05:57:36</span>
+                (f1).
+            </
+iv>
+            <
+iv>
+                Desktop version, switch to
+                <a rel="nofollow" class="switchToMobile" href="?mobile=true">mobile version</a>.
+            </
+iv>
+            <
+iv class="smaller"><a href="/privacy">Privacy Policy</a></
+iv>
+
+            <
+iv style="margin-top: 25px">Supporte
+ by</
+iv>
+            <
+iv style="
+            margin-top: 8px;
+            pa
+
+ing-bottom: 20px;
+            position: relative;
+            left: 10px;
+          ">
+                <a href="https://telegram.org/"><img style="margin-right: 2em; wi
+th: 60px"
+                        src="//sta.co
+eforces.com/s/98716/images/telegram-100x100.png" alt="Telegram"
+                        title="Telegram" /></a>
+                <a href="http://ifmo.ru/en/"><img style="wi
+th: 120px"
+                        src="//sta.co
+eforces.com/s/98716/images/itmo_small_en-logo.png" alt="ИТМО" title="ИТМО" /></a>
+            </
+iv>
+        </
+iv>
+        <script type="text/javascript">
+            $(function () {
+                $(".switchToMobile").click(function () {
+                    Co
+eforces.re
+irect(
+                        Co
+eforces.up
+ateUrlParameter(
+                            
+ocument.location.href,
+                            "mobile",
+                            "true"
+                        )
+                    );
+                    return false;
+                });
+                $(".switchToDesktop").click(function () {
+                    Co
+eforces.re
+irect(
+                        Co
+eforces.up
+ateUrlParameter(
+                            
+ocument.location.href,
+                            "mobile",
+                            "false"
+                        )
+                    );
+                    return false;
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            $(
+ocument).rea
+y(function () {
+                if ($(win
+ow).wi
+th() < 1600) {
+                    $(".button-up")
+                        .css("wi
+th", "30px")
+                        .css("line-height", "30px")
+                        .css("font-size", "20px");
+                }
+
+                if ($(win
+ow).wi
+th() >= 1200) {
+                    $(win
+ow).scroll(function () {
+                        if ($(this).scrollTop() > 100) {
+                            $(".button-up").fa
+eIn();
+                        } else {
+                            $(".button-up").fa
+eOut();
+                        }
+                    });
+
+                    $(".button-up").click(function () {
+                        $("bo
+y,html").animate(
+                            {
+                                scrollTop: 0,
+                            },
+                            500
+                        );
+                        return false;
+                    });
+
+                    $(".button-up").hover(
+                        function () {
+                            $(this)
+                                .animate({
+                                    opacity: "1",
+                                })
+                                .css({ "backgroun
+-color": "#e7ebf0", color: "#6a86a4" });
+                        },
+                        function () {
+                            $(this)
+                                .animate({
+                                    opacity: "0.7",
+                                })
+                                .css({ backgroun
+: "none", color: "#
+3
+be4" });
+                        }
+                    );
+                }
+                Co
+eforces.focusOnError();
+            });
+        </script>
+
+        <
+iv class="userListsFacebox" style="
+isplay: none">
+            <
+iv style="
+            pa
+
+ing: 0.5em;
+            wi
+th: 600px;
+            max-height: 200px;
+            overflow-y: auto;
+          ">
+                <
+iv class="
+atatable" style="backgroun
+-color: #e1e1e1; pa
+
+ing-bottom: 3px">
+                    <
+iv class="lt">&nbsp;</
+iv>
+                    <
+iv class="rt">&nbsp;</
+iv>
+                    <
+iv class="lb">&nbsp;</
+iv>
+                    <
+iv class="rb">&nbsp;</
+iv>
+
+                    <
+iv style="
+                pa
+
+ing: 4px 0 0 6px;
+                font-size: 1.4rem;
+                position: relative;
+              ">
+                        User lists
+
+                        <
+iv style="position: absolute; right: 0.25em; top: 0.35em">
+                            <span style="pa
+
+ing: 0; position: relative; bottom: 2px" class="rowCount"></span>
+
+                            <img class="close
+" src="//sta.co
+eforces.com/s/98716/images/icons/control.png" />
+
+                            <span class="filter" style="
+isplay: none">
+                                <img class="opene
+" src="//sta.co
+eforces.com/s/98716/images/icons/control-270.png" />
+                                <input style="
+                      pa
+
+ing: 0 0 0 20px;
+                      position: relative;
+                      bottom: 2px;
+                      bor
+er: 1px soli
+ #aaa;
+                      height: 17px;
+                      font-size: 1.3rem;
+                    " />
+                            </span>
+                        </
+iv>
+                    </
+iv>
+                    <
+iv style="
+                backgroun
+-color: white;
+                margin: 0.3em 3px 0 3px;
+                position: relative;
+              ">
+                        <
+iv class="ilt">&nbsp;</
+iv>
+                        <
+iv class="irt">&nbsp;</
+iv>
+                        <table class="">
+                            <thea
+>
+                                <tr>
+                                    <th>Name</th>
+                                </tr>
+                            </thea
+>
+                            <tbo
+y></tbo
+y>
+                        </table>
+                    </
+iv>
+                </
+iv>
+                <script type="text/javascript">
+                    $(
+ocument).rea
+y(function () {
+                        // Create new ':containsIgnoreCase' selector for search
+                        jQuery.expr[":"].containsIgnoreCase = function (a, i, m) {
+                            return (
+                                jQuery(a).text().toUpperCase().in
+exOf(m[3].toUpperCase()) >=
+                                0
+                            );
+                        };
+
+                        if (win
+ow.up
+ateDatatableFilter == un
+efine
+) {
+                            win
+ow.up
+ateDatatableFilter = function (i) {
+                                var parent = $(i).parent().parent().parent().parent();
+                                $("tr.no-items", parent).remove();
+                                $("tr", parent).hi
+e().removeClass("visible");
+                                var text = $(i).val();
+                                if (text) {
+                                    $("tr" + ":containsIgnoreCase('" + text + "')", parent)
+                                        .show()
+                                        .a
+
+Class("visible");
+                                } else {
+                                    parent.fin
+(".rowCount").text("");
+                                    $("tr", parent).show().a
+
+Class("visible");
+                                }
+
+                                var foun
+ = false;
+                                var visibleRowCount = 0;
+                                $("tr", parent).each(function () {
+                                    if (!foun
+) {
+                                        if ($(this).fin
+("th").size() > 0) {
+                                            $(this).show().a
+
+Class("visible");
+                                            foun
+ = true;
+                                        }
+                                    }
+                                    if ($(this).hasClass("visible")) {
+                                        visibleRowCount++;
+                                    }
+                                });
+                                if (text) {
+                                    parent
+                                        .fin
+(".rowCount")
+                                        .text("Matches: " + (visibleRowCount - (foun
+ ? 1 : 0)));
+                                }
+                                if (visibleRowCount == (foun
+ ? 1 : 0)) {
+                                    $(
+                                        '<tr class=\'no-items visible\'><t
+ style="text-align:left;"colspan="32">No items<\/t
+><\/tr>'
+                                    ).appen
+To($(parent).fin
+("table"));
+                                }
+                                $(parent).fin
+("tr t
+").removeClass("
+ark");
+                                $(parent).fin
+("tr.visible:o
+
+ t
+").a
+
+Class("
+ark");
+                            };
+
+                            $(".
+atatable .close
+").click(function () {
+                                var parent = $(this).parent();
+                                $(this).hi
+e();
+                                $(".filter", parent).fa
+eIn(function () {
+                                    $("input", parent)
+                                        .val("")
+                                        .focus()
+                                        .css("bor
+er", "1px soli
+ #aaa");
+                                });
+                            });
+
+                            $(".
+atatable .opene
+").click(function () {
+                                var parent = $(this).parent().parent();
+                                $(".filter", parent).fa
+eOut(function () {
+                                    $(".close
+", parent).show();
+                                    $("input", parent)
+                                        .val("")
+                                        .each(function () {
+                                            win
+ow.up
+ateDatatableFilter(this);
+                                        });
+                                });
+                            });
+
+                            $(".
+atatable .filter input").keyup(function (e) {
+                                win
+ow.up
+ateDatatableFilter(this);
+                                e.preventDefault();
+                                e.stopPropagation();
+                            });
+
+                            $(".
+atatable table").each(function () {
+                                var foun
+ = false;
+                                $("tr", this).each(function () {
+                                    if (!foun
+ && $(this).fin
+("th").size() == 0) {
+                                        foun
+ = true;
+                                    }
+                                });
+                                if (!foun
+) {
+                                    $(
+                                        '<tr class=\'no-items visible\'><t
+ style="text-align:left;"colspan="32">No items<\/t
+><\/tr>'
+                                    ).appen
+To(this);
+                                }
+                            });
+
+                            // Applies styles to 
+atatables.
+                            $(".
+atatable").each(function () {
+                                $(this).fin
+("tr:first th").a
+
+Class("top");
+                                $(this).fin
+("tr:last t
+").a
+
+Class("bottom");
+                                $(this).fin
+("tr:o
+
+ t
+").a
+
+Class("
+ark");
+                                $(this)
+                                    .fin
+("tr t
+:first-chil
+, tr th:first-chil
+")
+                                    .a
+
+Class("left");
+                                $(this)
+                                    .fin
+("tr t
+:last-chil
+, tr th:last-chil
+")
+                                    .a
+
+Class("right");
+                            });
+
+                            $(".
+atatable table.tablesorter").each(function () {
+                                $(this).bin
+("sortEn
+", function () {
+                                    $(".
+atatable").each(function () {
+                                        $(this)
+                                            .fin
+("th, t
+")
+                                            .removeClass("top")
+                                            .removeClass("bottom")
+                                            .removeClass("left")
+                                            .removeClass("right")
+                                            .removeClass("
+ark");
+                                        $(this).fin
+("tr:first th").a
+
+Class("top");
+                                        $(this).fin
+("tr:last t
+").a
+
+Class("bottom");
+                                        $(this).fin
+("tr:o
+
+ t
+").a
+
+Class("
+ark");
+                                        $(this)
+                                            .fin
+("tr t
+:first-chil
+, tr th:first-chil
+")
+                                            .a
+
+Class("left");
+                                        $(this)
+                                            .fin
+("tr t
+:last-chil
+, tr th:last-chil
+")
+                                            .a
+
+Class("right");
+                                    });
+                                });
+                            });
+                        }
+                    });
+                </script>
+            </
+iv>
+        </
+iv>
+        <script type="application/javascript">
+            $(function () {
+                $(".userListMarker").click(function () {
+                    $.post(
+                        "/
+ata/lists",
+                        { action: "fin
+Touche
+" },
+                        function (json) {
+                            Co
+eforces.facebox(".userListsFacebox");
+                            var tbo
+y = $("#facebox tbo
+y");
+                            tbo
+y.empty();
+                            for (var i in json) {
+                                tbo
+y.appen
+(
+                                    $("<tr></tr>").appen
+(
+                                        $("<t
+></t
+>")
+                                            .attr("
+ata-rea
+Key", json[i].rea
+Key)
+                                            .text(json[i].name)
+                                    )
+                                );
+                            }
+                            Co
+eforces.up
+ateDatatables();
+                            tbo
+y
+                                .fin
+("t
+")
+                                .css("cursor", "pointer")
+                                .click(function () {
+                                    
+ocument.location = Co
+eforces.up
+ateUrlParameter(
+                                        
+ocument.location.href,
+                                        "list",
+                                        $(this).attr("
+ata-rea
+Key")
+                                    );
+                                });
+                        },
+                        "json"
+                    );
+                });
+            });
+        </script>
+    </
+iv>
+    <script type="application/javascript">
+        if (
+            "serviceWorker" in navigator &&
+            "fetch" in win
+ow &&
+            "caches" in win
+ow
+        ) {
+            var parser = new UAParser();
+            var browserName = parser.getBrowser().name;
+            var browserVersion = parser.getBrowser().version;
+
+            var supporte
+Browser = false;
+            var supporte
+Browsers = {
+                Chrome: "76",
+                Firefox: "68",
+                // "E
+ge": "18",
+                Safari: "12.1",
+                Opera: "63",
+                Yan
+ex: "19.9",
+            };
+
+            for (var name in supporte
+Browsers) {
+                if (
+                    name === browserName &&
+                    supporte
+Browsers[name] <= browserVersion
+                ) {
+                    supporte
+Browser = true;
+                }
+            }
+
+            if (supporte
+Browser) {
+                navigator.serviceWorker
+                    .register("/service-worker-98716.js")
+                    .then(function (registration) {
+                        console.log("Service worker registere
+");
+                    })
+                    .catch(function (error) {
+                        console.log("Registration faile
+: ", error);
+                    });
+            } else {
+                navigator.serviceWorker
+                    .getRegistrations()
+                    .then(function (registrations) {
+                        for (var i = 0; i < registrations.length; i++) {
+                            registrations[i].unregister();
+                        }
+                    });
+            }
+        }
+    </script>
+</bo
+y>
+
+</html>

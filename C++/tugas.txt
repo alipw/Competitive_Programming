@@ -1,0 +1,2 @@
+insert into barang(nama_barang,harga,stok,deskripsi,image) values("ASD","99000","90","Ini buku murah loh","image-1607605198467.jpg");
+insert into barang(nama_barang,harga,stok,deskripsi,image) values("ASD","99000","90","Ini buku murah loh","image-1607605198467.jpg");	
