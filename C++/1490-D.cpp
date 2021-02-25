@@ -32,38 +32,51 @@ void DEBUG_PRINTER(map<T,S> var){
 }
 //end of template
 
+umap<int,int> mp;
+
+int maxElement(vector<int> arr){
+	int ans = INT_MIN;
+	for(int i : arr){
+		ans = max(ans,i);
+	}
+	return ans;
+}
+
+
+void dfs(vector<int> arr, int j){
+	if(arr.size() != 0) mp[maxElement(arr)] = j;
+	if(arr.size() <= 1){
+		return;
+	}
+	vector<int> arrleft;
+	vector<int> arrRight;
+	for(int i = 0; i < arr.size(); i++){
+		if(arr[i] == maxElement(arr)){
+			for(int k = 0; k < i; k++){
+				arrleft.push_back(arr[k]);
+			}
+			for(int k = i + 1; k < arr.size(); k++){
+				arrRight.push_back(arr[k]);
+			}
+			i = arr.size();
+		}
+	}
+	j++;
+	dfs(arrleft, j);
+	dfs(arrRight, j);
+}
 
 void solve(){
-	int q,d;
-	cin >> q >> d;
-	for(int asdofk = 0; asdofk < q; asdofk++){
-		int k; cin >> k;
-		bool ok = 0;
-		bool notZero = true;
-		string strK = to_string(k);
-		for(auto x : strK){
-			if(x - '0' == d){
-				cout << "YES";
-				ok = 1;
-				break;
-			}
-		}
-		while(!ok && notZero){
-			k -= d;
-			strK = to_string(k);
-			for(auto x : strK){
-				if(x - '0' == d){
-					cout << "YES";
-					ok = 1;
-					break;
-				}
-			}
-			if(k <= 0){
-				notZero = 0;
-			}
-		}
-		if(!ok) cout << "NO";
-		cout << endl;
+	int n;
+	cin >> n;
+	vector<int> a(n);
+	for(int i = 0; i < n; i++){
+		cin >> a[i];
+	}
+	dfs(a,0);
+	// debug(mp);
+	for(auto i : a){
+		cout << mp[i] << " ";
 	}
 }
 
@@ -74,6 +87,27 @@ int main(){
 	cin >> TEST_CASE;
 	while(TEST_CASE--){
 		solve();
+		cout << endl;
 	}
 	return 0;
 }
+
+// int main(){
+// 	ios_base::sync_with_stdio(0);
+// 	cin.tie(0);
+// 	solve();
+// 	return 0;
+// }
+
+// int main(){
+// 	ios_base::sync_with_stdio(0);
+// 	cin.tie(0);
+// 	int TEST_CASE:
+// 	cin >> TEST_CASE;
+// 	for(int i = 1; i <= TEST_CASE; i++){
+// 		cout << "CASE #" << i << endl;
+// 		solve();
+// 		cout << endl;
+// 	}
+// 	return 0;
+// }

@@ -34,37 +34,21 @@ void DEBUG_PRINTER(map<T,S> var){
 
 
 void solve(){
-	int q,d;
-	cin >> q >> d;
-	for(int asdofk = 0; asdofk < q; asdofk++){
-		int k; cin >> k;
-		bool ok = 0;
-		bool notZero = true;
-		string strK = to_string(k);
-		for(auto x : strK){
-			if(x - '0' == d){
-				cout << "YES";
-				ok = 1;
+	int n, ans = 0;
+	cin >> n;
+	vector<int> a(n);
+	for(int& i : a) cin >> i;
+	sort(all(a));
+	for(int i = 0; i < n; i++){
+		for(int j = i; j >= 0; j--){
+			if(a[i] > a[j]){
+				ans++;
 				break;
 			}
 		}
-		while(!ok && notZero){
-			k -= d;
-			strK = to_string(k);
-			for(auto x : strK){
-				if(x - '0' == d){
-					cout << "YES";
-					ok = 1;
-					break;
-				}
-			}
-			if(k <= 0){
-				notZero = 0;
-			}
-		}
-		if(!ok) cout << "NO";
-		cout << endl;
 	}
+	cout << ans;
+	
 }
 
 int main(){
@@ -74,6 +58,27 @@ int main(){
 	cin >> TEST_CASE;
 	while(TEST_CASE--){
 		solve();
+		cout << endl;
 	}
 	return 0;
 }
+
+// int main(){
+// 	ios_base::sync_with_stdio(0);
+// 	cin.tie(0);
+// 	solve();
+// 	return 0;
+// }
+
+// int main(){
+// 	ios_base::sync_with_stdio(0);
+// 	cin.tie(0);
+// 	int TEST_CASE:
+// 	cin >> TEST_CASE;
+// 	for(int i = 1; i <= TEST_CASE; i++){
+// 		cout << "CASE #" << i << endl;
+// 		solve();
+// 		cout << endl;
+// 	}
+// 	return 0;
+// }
