@@ -34,7 +34,21 @@ void DEBUG_PRINTER(map<T,S> var){
 
 
 void solve(){
+	int s; cin >> s;
 
+	int total = 1, ans = 0, number = 1;
+	ans++;
+	while(total < s){
+		if(total + number + 2 < s){
+			number += 2;
+			total += number;
+		}else{
+			number = s - total;
+			total += number;
+		}
+		ans++;
+	}
+	cout << ans;
 }
 
 int main(){
@@ -43,26 +57,6 @@ int main(){
 	int TEST_CASE;
 	cin >> TEST_CASE;
 	while(TEST_CASE--){
-		solve();
-		cout << endl;
-	}
-	return 0;
-}
-
-int main(){
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	solve();
-	return 0;
-}
-
-int main(){
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	int TEST_CASE:
-	cin >> TEST_CASE;
-	for(int i = 1; i <= TEST_CASE; i++){
-		cout << "CASE #" << i << endl;
 		solve();
 		cout << endl;
 	}

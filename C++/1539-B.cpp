@@ -33,38 +33,43 @@ void DEBUG_PRINTER(map<T,S> var){
 //end of template
 
 
-void solve(){
-
+int alphabetIndex(char c){
+	return c - 'a' + 1;	
 }
 
-int main(){
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	int TEST_CASE;
-	cin >> TEST_CASE;
-	while(TEST_CASE--){
-		solve();
-		cout << endl;
+void solve(){
+	int n,q;
+	cin >> n >> q;
+
+	string s; cin >> s;
+	vector<int> a1(n);
+	vector<int> a2(n);
+
+	int total = 0;
+	for(int i = 0; i < n; i++){
+		total += alphabetIndex(s[i]);
+		a1[i] = total;
 	}
-	return 0;
+	total = 0;
+	for(int i = n - 1; i >= 0; i--){
+		total += alphabetIndex(s[i]);
+		a2[i] = total;
+	}
+
+	for(int i = 0; i < q; i++){
+		int l,r; cin >> l >> r;
+		int front = (l == 1 ? 0 : a1[l - 2]);
+		int back = (r == n ? 0 : a2[r]);
+		int ans = front + back;
+		ans = total - ans;
+		cout << ans << endl;
+	}
+
 }
 
 int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	solve();
-	return 0;
-}
-
-int main(){
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	int TEST_CASE:
-	cin >> TEST_CASE;
-	for(int i = 1; i <= TEST_CASE; i++){
-		cout << "CASE #" << i << endl;
-		solve();
-		cout << endl;
-	}
 	return 0;
 }

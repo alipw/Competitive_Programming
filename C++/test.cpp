@@ -5,37 +5,39 @@ using namespace std;
 #define ull unsigned long long int
 #define ll long long int
 #define umap unordered_map
-#define pb(a) push_back(a)
+#define all(a) a.begin(), a.end()
+#define rall(a) a.rbegin(), a.rend()
+#define absolute(a) sqrt((a) * (a))
 #define rep(i,n) for(int i = 0; i < (n); ++i)
+#define debug(a) {cout << "[" << #a << " : "; DEBUG_PRINTER((a)); cout << "]\n" ;}
+template <typename T>
+void DEBUG_PRINTER(T var){
+	cout << var;
+}
+template <typename T>
+void DEBUG_PRINTER(vector<T> var){
+	for(int i = 0; i < var.size(); ++i) cout << var[i] << (i == var.size() - 1 ? "" : ", ");
+}
+template <typename T, typename S>
+void DEBUG_PRINTER(vector<pair<T,S>> var){
+	for(int i = 0; i < var.size(); ++i) cout << var[i].first << " -> " << var[i].second << (i == var.size() - 1 ? "" : endl);
+}
+template<typename T,typename S>
+void DEBUG_PRINTER(umap<T,S> var){
+	int j = 0; for(auto it = var.begin(); it != var.end(); it++, j++) cout << "[" << it->first << "," << it->second << "]" << (j == var.size() - 1 ? "" : ", ");
+}
+template<typename T,typename S>
+void DEBUG_PRINTER(map<T,S> var){
+	int j = 0; for(auto it = var.begin(); it != var.end(); it++, j++) cout << "[" << it->first << "," << it->second << "]" << (j == var.size() - 1 ? "" : ", ");
+}
 //end of template
 
 
 void solve(){
-	string str,last = "";
-	umap<char,int> badLetters;
-	badLetters['g'] = 1;
-	badLetters['k'] = 1;
-	badLetters['m'] = 1;
-	badLetters['q'] = 1;
-	badLetters['v'] = 1;
-	badLetters['w'] = 1;
-	badLetters['x'] = 1;
-	badLetters['z'] = 1;
-	while(cin){
-		cin >> str;	
-		if(last.length() < str.length()){
-			bool ok = true;
-			rep(i,str.length()){
-				if(badLetters[str[i]]){
-					ok = false;
-					break;
-				}
-			}
-			if(ok) last = str;
-		}
-	}
-	cout << last;
+	char a = 'a', b = 'b';
+	cout << (b  - a);
 }
+
 
 int main(){
 	ios_base::sync_with_stdio(0);
@@ -43,5 +45,3 @@ int main(){
 	solve();
 	return 0;
 }
-
-

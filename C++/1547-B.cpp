@@ -34,7 +34,58 @@ void DEBUG_PRINTER(map<T,S> var){
 
 
 void solve(){
+	string s; cin >> s;
 
+	int n = s.length();
+
+	umap<char,int> mp;
+	for(char c : s){
+		mp[c]++;
+	}
+
+	int ptrl = 0, ptrr = 0;
+
+	for(int i = 0; i < n; i++){
+		if(s[i] == 'a'){
+			ptrl = i;
+			ptrr = i;
+			i = n;
+		}
+		if(i == n - 1 && s[i] != 'a'){
+			cout << "NO";
+			return;
+		}
+	}
+
+	if(s.length() == 1 && s != "a") {
+		cout << "NO";
+		return;
+	}
+
+	char lastchar = 'a';
+
+	for(int i = 0; i < n - 1; i++){
+
+		int noptrr = 1, noptrl = 1;
+
+		if(ptrr + 1 < n && s[ptrr + 1] == char(lastchar + 1)){
+			ptrr++;
+			noptrr = 0;
+		} 
+
+		if(ptrl - 1 >= 0 && s[ptrl - 1] == char(lastchar + 1)){
+			ptrl--;
+			noptrl = 0;
+		}
+		lastchar = char(lastchar + 1);
+
+		if(noptrl && noptrr){
+			cout << "NO";
+			return;
+		}
+	}
+
+	cout << "YES";
 }
 
 int main(){
@@ -43,26 +94,6 @@ int main(){
 	int TEST_CASE;
 	cin >> TEST_CASE;
 	while(TEST_CASE--){
-		solve();
-		cout << endl;
-	}
-	return 0;
-}
-
-int main(){
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	solve();
-	return 0;
-}
-
-int main(){
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	int TEST_CASE:
-	cin >> TEST_CASE;
-	for(int i = 1; i <= TEST_CASE; i++){
-		cout << "CASE #" << i << endl;
 		solve();
 		cout << endl;
 	}
