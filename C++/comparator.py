@@ -20,9 +20,9 @@ comp = filecmp.cmp(file1, file2, shallow = False)
 f = open("result.txt", "w")
 result = ""
 if comp : 
-	result = "true"
+	result = "[VERDICT: true]"
 else : 
-	result = "false"
+	result = "[VERDICT: false]"
 f.write(result)
 f.close()
-print(comp) 
+print(result) 

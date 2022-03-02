@@ -11,57 +11,59 @@ using namespace std;
 #define rep(i,n) for(int i = 0; i < (n); ++i)
 #define debug(a) {cout << "[" << #a << " : "; DEBUG_PRINTER((a)); cout << "]\n" ;}
 template <typename T>
-void DEBUG_PRINTER(T var){
+void DEBUG_PRINTER(T var) { 
 	cout << var;
 }
 template <typename T>
-void DEBUG_PRINTER(vector<T> var){
-	for(int i = 0; i < var.size(); ++i) cout << var[i] << (i == var.size() - 1 ? "" : ", ");
+void DEBUG_PRINTER(vector<T> var) { 
+	for (int i = 0; i < var.size(); ++i) cout << var[i] << (i == var.size() - 1 ? "" : ", ");
 }
 template <typename T, typename S>
-void DEBUG_PRINTER(vector<pair<T,S>> var){
-	for(int i = 0; i < var.size(); ++i) cout << var[i].first << " -> " << var[i].second << (i == var.size() - 1 ? "" : endl);
+void DEBUG_PRINTER(vector<pair<T, S>> var) { 
+	for (int i = 0; i < var.size(); ++i) cout << var[i].first << " -> " << var[i].second << (i == var.size() - 1 ? "" : endl);
 }
 template<typename T, typename S>
-void DEBUG_PRINTER(umap<T,S> var){
-	int j = 0; for(auto it = var.begin(); it != var.end(); it++, j++) cout << "[" << it->first << "," << it->second << "]" << (j == var.size() - 1 ? "" : ", ");
+void DEBUG_PRINTER(umap<T, S> var) { 
+	int j = 0; for (auto it = var.begin(); it != var.end(); it++, j++) cout << "[" << it->first << "," << it->second << "]" << (j == var.size() - 1 ? "" : ", ");
 }
 template<typename T, typename S>
-void DEBUG_PRINTER(map<T,S> var){
-	int j = 0; for(auto it = var.begin(); it != var.end(); it++, j++) cout << "[" << it->first << "," << it->second << "]" << (j == var.size() - 1 ? "" : ", ");
+void DEBUG_PRINTER(map<T, S> var) { 
+	int j = 0; for (auto it = var.begin(); it != var.end(); it++, j++) cout << "[" << it->first << "," << it->second << "]" << (j == var.size() - 1 ? "" : ", "); 
 }
+
+
 //end of template
 
 
-void solve(){
+void solve() {
 
 }
 
-int main(){
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	int TEST_CASE;
 	cin >> TEST_CASE;
-	while(TEST_CASE--){
+	while (TEST_CASE--) {
 		solve();
 		cout << endl;
 	}
 	return 0;
 }
 
-int main(){
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	solve();
 	return 0;
 }
 
-int main(){
+int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	int TEST_CASE:
 	cin >> TEST_CASE;
-	for(int i = 1; i <= TEST_CASE; i++){
+	for (int i = 1; i <= TEST_CASE; i++) {
 		cout << "CASE #" << i << endl;
 		solve();
 		cout << endl;

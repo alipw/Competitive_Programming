@@ -28,12 +28,13 @@ void DEBUG_PRINTER(umap<T,S> var){
 }
 //end of template
 
-
-
 void solve(){
-	ll a,b,c;
-	cin >> a >> b >> c;
-	cout << max(a,max(b,c));
+	int n;
+	bool ascending;
+	cout << "masukkan jumlah angka yang ingin anda urutkan : ";
+	cin >> n;
+	cout << "apakah anda ingin mengurutkan dari kecil ke besar atau besar ke kecil?\n (1 untuk besar ke kecil, lainnya untuk kecil ke besar) : ";
+	
 }
 
 int main(){
