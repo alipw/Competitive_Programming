@@ -1,25 +1,27 @@
 from bs4 import BeautifulSoup
 import sys
+import os
 import requests
 
 url = sys.stdin.read()
+workdir = os.getcwd()
 req = requests.get(url)
 soup = BeautifulSoup(req.text, "html.parser")
 i = 0
 for pre in soup.find_all('pre'):
 	if i == 0 : 
 		i += 1
-		f = open("/home/alipw/Documents/CP/C++/in2.txt", "w")
+		f = open(workdir + "/in2.txt", "w")
 		f.write(pre.text)
 		f.close()
 	else :
-		f = open("/home/alipw/Documents/CP/C++/judgeout.txt", "w")
+		f = open(workdir + "/judgeout.txt", "w")
 		f.write(pre.text)
 		f.close()
 		break
 
-jdgout = open("/home/alipw/Documents/CP/C++/judge.txt", "w")
-judgeout = open("/home/alipw/Documents/CP/C++/judgeout.txt", "r")
+jdgout = open(workdir + "/judge.txt", "w")
+judgeout = open(workdir + "/judgeout.txt", "r")
 lines = judgeout.readline()
 i = 0
 while lines : 
@@ -30,8 +32,8 @@ while lines :
 jdgout.close()
 judgeout.close()
 i = 0
-datain = open("/home/alipw/Documents/CP/C++/in.txt", "w")
-fakein = open("/home/alipw/Documents/CP/C++/in2.txt", "r")
+datain = open(workdir + "/in.txt", "w")
+fakein = open(workdir + "/in2.txt", "r")
 line = fakein.readline()
 while line : 
 	if i != 0 : 

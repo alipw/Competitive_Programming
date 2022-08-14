@@ -37,17 +37,37 @@ void DEBUG_PRINTER(map<T, S> var) {
 
 
 //end of template
+void solve(){
+	int n,k; cin >> n >> k;
+	map<int, pair<int,int>> pos;
 
-int main(){
-  int n = 0; cin >> n;
+	for(int i = 0; i < n; i++){
+		int buff;
+		cin >> buff;
 
-  for(int i = 0; i < n; i++){
-    for(int j = 0; j < 5; j++){
-      for(int k = 0; k < n - i; k++) cout << " ";
-      for(int k = 0; k < i; k++) cout << "*";
-      for(int k = 0; k < i; k++) cout << "*";
-      for(int k = 0; k < n - i; k++) cout << " ";
-    }
-    cout << endl;
-  }
+		if(pos[buff].first == 0) pos[buff].first = i + 1;
+		pos[buff].second = i + 1;
+	}
+
+	while(k--){
+		int initial, target;
+		cin >> initial >> target;
+
+		if(pos[initial].first != 0 and pos[target].first != 0 and pos[initial].first <= pos[target].second) cout << "YES";
+		else cout << "NO";
+
+		cout << endl;
+	}
+	
+}
+
+int main() {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	int TEST_CASE;
+	cin >> TEST_CASE;
+	while (TEST_CASE--) {
+		solve();
+	}
+	return 0;
 }

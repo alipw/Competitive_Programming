@@ -1,4 +1,6 @@
+#include <algorithm>
 #include <bits/stdc++.h>
+#include <vector>
 using namespace std;
 #define endl "\n"
 #define MOD 1000000007
@@ -32,22 +34,36 @@ void DEBUG_PRINTER(umap<T, S> var) {
 }
 template<typename T, typename S>
 void DEBUG_PRINTER(map<T, S> var) {
-	int j = 0; for (auto it = var.begin(); it != var.end(); it++, j++) cout << "[" << it->first << "," << it->second << "]" << (j == var.size() - 1 ? "" : ", "); 
+	int j = 0; for (auto it = var.begin(); it != var.end(); it++, j++) cout << "[" << it->first << "," << it->second << "]" << (j == var.size() - 1 ? "" : ", ");
 }
 
 
 //end of template
+void solve(){
+	int n; cin >> n;
+	vector<int> buff;
 
-int main(){
-  int n = 0; cin >> n;
+	for(int i = 9; n != 0 && i > 0; i--){
+		if(n - i < 0) {
+			buff.push_back(n);
+			break;
+		}
 
-  for(int i = 0; i < n; i++){
-    for(int j = 0; j < 5; j++){
-      for(int k = 0; k < n - i; k++) cout << " ";
-      for(int k = 0; k < i; k++) cout << "*";
-      for(int k = 0; k < i; k++) cout << "*";
-      for(int k = 0; k < n - i; k++) cout << " ";
-    }
-    cout << endl;
-  }
+		buff.push_back(i);
+		n -= i;
+	}
+
+	for(int i = buff.size() - 1; i >= 0; i--) cout << buff[i];
+};
+
+int main() {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	int TEST_CASE;
+	cin >> TEST_CASE;
+	while (TEST_CASE--) {
+		solve();
+		cout << endl;
+	}
+	return 0;
 }

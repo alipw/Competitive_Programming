@@ -1,4 +1,9 @@
+#include <algorithm>
 #include <bits/stdc++.h>
+#include <list>
+#include <memory>
+#include <set>
+#include <vector>
 using namespace std;
 #define endl "\n"
 #define MOD 1000000007
@@ -38,16 +43,49 @@ void DEBUG_PRINTER(map<T, S> var) {
 
 //end of template
 
-int main(){
-  int n = 0; cin >> n;
 
-  for(int i = 0; i < n; i++){
-    for(int j = 0; j < 5; j++){
-      for(int k = 0; k < n - i; k++) cout << " ";
-      for(int k = 0; k < i; k++) cout << "*";
-      for(int k = 0; k < i; k++) cout << "*";
-      for(int k = 0; k < n - i; k++) cout << " ";
-    }
-    cout << endl;
-  }
+void solve() {
+	int n,m; cin >> n >> m;
+	string s(m + 1, 'B');
+	
+	umap<int, bool> mp;
+	vector<int> a(n);
+	vector<int> possible_operations;
+
+	for(int& x : a) {
+		cin >> x;
+		int minVal, maxVal;
+		minVal = min(x, m + 1 - x);
+		maxVal = max(x, m + 1 - x);
+
+		if(!mp[minVal]) {
+			mp[minVal] = true;
+			possible_operations.push_back(minVal);
+		}else if(!mp[maxVal]){
+			mp[maxVal] = true;
+			possible_operations.push_back(maxVal);
+		}
+		
+	}
+	
+	sort(all(possible_operations));
+	for(int i = 0; i < possible_operations.size(); i++){
+		s[possible_operations[i]] = 'A';
+	}
+
+	cout << s.substr(1, m +1);
+
 }
+
+int main() {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	int TEST_CASE;
+	cin >> TEST_CASE;
+	while (TEST_CASE--) {
+		solve();
+		cout << endl;
+	}
+	return 0;
+}
+

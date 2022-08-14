@@ -38,16 +38,33 @@ void DEBUG_PRINTER(map<T, S> var) {
 
 //end of template
 
-int main(){
-  int n = 0; cin >> n;
 
-  for(int i = 0; i < n; i++){
-    for(int j = 0; j < 5; j++){
-      for(int k = 0; k < n - i; k++) cout << " ";
-      for(int k = 0; k < i; k++) cout << "*";
-      for(int k = 0; k < i; k++) cout << "*";
-      for(int k = 0; k < n - i; k++) cout << " ";
+int solve() {
+  int n,k; cin >> n >> k;
+
+  umap<int,bool> dead;
+  int total_death = 0, pos = 1;
+
+  while(total_death < n){
+    int skipped_counter = 0;
+    while(true){
+      skipped_counter += !dead[pos];
+      if(skipped_counter == k) break;
+      else{
+        pos++; if(pos > n) pos = 1;
+      }
     }
-    cout << endl;
+
+    dead[pos] = true;
+    total_death++;
   }
+  return pos;
 }
+
+int main() {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	debug(solve());
+	return 0;
+}
+

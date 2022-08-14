@@ -5,8 +5,7 @@ void solve(){
 	string n;
 	cin >> n;
 	string data[5];
-	for(int i = 0;i < 5; i++){
-		cin >> data[i];
+	for(int i = 0;i < 5; i++){ cin >> data[i];
 	}
 	bool ada = false;
 	for(int i = 0;i < 5; i++){

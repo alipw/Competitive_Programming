@@ -34,7 +34,19 @@ void DEBUG_PRINTER(map<T, S> var) {
 
 
 void solve() {
-
+	int x; cin >> x;
+	int ans = 0;
+	for(int i = 1; i <= 9; i++){
+		string s = "";
+		for(int j = 0; j < 4; j++){
+			s.push_back('0' + i);
+			ans += s.length();
+			if(s == to_string(x)){
+				cout << ans;
+				return;
+			}
+		}
+	}
 }
 
 int main() {

@@ -1,11 +1,12 @@
 import filecmp 
-  
+import os
   
 # Path of first file 
-file1 = "/home/alipw/Documents/CP/C++/out.txt"
+workdir = os.getcwd()
+file1 = workdir + "/out.txt"
   
 # Path of second file 
-file2 = "/home/alipw/Documents/CP/C++/judge.txt"
+file2 = workdir + "/judge.txt"
    
 # Compare the os.stat() 
 # signature i.e the metadata 

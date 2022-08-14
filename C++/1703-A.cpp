@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+b#include <bits/stdc++.h>
 using namespace std;
 #define endl "\n"
 #define MOD 1000000007
@@ -38,16 +38,31 @@ void DEBUG_PRINTER(map<T, S> var) {
 
 //end of template
 
-int main(){
-  int n = 0; cin >> n;
 
-  for(int i = 0; i < n; i++){
-    for(int j = 0; j < 5; j++){
-      for(int k = 0; k < n - i; k++) cout << " ";
-      for(int k = 0; k < i; k++) cout << "*";
-      for(int k = 0; k < i; k++) cout << "*";
-      for(int k = 0; k < n - i; k++) cout << " ";
-    }
-    cout << endl;
-  }
+void solve() {
+	string s; cin >> s;
+	string baseline = "yes";
+
+	bool ok = true;
+	for(int i = 0; i < 3; i++){
+		if(tolower(s[i])!= tolower(baseline[i])) {
+			ok = false;
+			break;
+		}
+	}
+
+	if(ok) cout << "YES";
+	else cout << "NO";
+}
+
+int main() {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	int TEST_CASE;
+	cin >> TEST_CASE;
+	while (TEST_CASE--) {
+		solve();
+		cout << endl;
+	}
+	return 0;
 }

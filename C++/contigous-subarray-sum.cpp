@@ -38,16 +38,39 @@ void DEBUG_PRINTER(map<T, S> var) {
 
 //end of template
 
-int main(){
-  int n = 0; cin >> n;
 
-  for(int i = 0; i < n; i++){
-    for(int j = 0; j < 5; j++){
-      for(int k = 0; k < n - i; k++) cout << " ";
-      for(int k = 0; k < i; k++) cout << "*";
-      for(int k = 0; k < i; k++) cout << "*";
-      for(int k = 0; k < n - i; k++) cout << " ";
-    }
-    cout << endl;
-  }
+vector<int> solve(int arr[], int n, long long s)
+{
+	unordered_map<long long, int> mp;
+
+	mp[-arr[0]] = 2;
+	mp[0] = 1;
+	for(int i = 0; i < n; i++) {
+		if(i != 0){
+			arr[i] = arr[i - 1] + arr[i];
+			mp[-arr[i]] = i + 2;	
+		}
+
+		if(mp[s - arr[i]]){
+		    vector<int> ans(2);
+			ans[0] = mp[s - arr[i]];
+			ans[1] = i + 1;
+			return ans;
+		} 
+	}
+	vector<int> no_ans(1); 
+	no_ans[0] = -1;
+	return no_ans;
 }
+
+int main() {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	int n; ll s; cin >> n >> s;
+	int arr[n];
+	for(int &x : arr) cin >> x;
+	debug(solve(arr, n ,s));
+	cout << endl;
+	return 0;
+}
+

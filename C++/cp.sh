@@ -1,28 +1,29 @@
 #!/bin/bash
 
-destdir=/home/alipw/Documents/CP/C++/url.txt
+workdir=`pwd`
+destdir="$workdir/url.txt"
 if [ -f "$destdir" ]
 then 
     echo "$1" > "$destdir"
 fi
 url=$destdir
-/home/alipw/Documents/CP/C++/./namer.out < "$url" > /home/alipw/Documents/CP/C++/filename.txt
+"$workdir/./namer.out" < "$url" > "$workdir/filename.txt"
 
-filename=`cat /home/alipw/Documents/CP/C++/filename.txt`
+filename=`cat "$workdir/filename.txt"`
 
 if [ "$2" = "y" ];
 then
-	subl /home/alipw/Documents/CP/C++/$filename
-	cp /home/alipw/Documents/CP/C++/me.cpp /home/alipw/Documents/CP/C++/$filename
+	code "$workdir/$filename"
+	cp "$workdir/me.cpp" "$workdir/$filename"
 fi
-python3 /home/alipw/Documents/CP/C++/parser.py <$destdir
+python3 "$workdir/parser.py" <$destdir
 
 echo "press enter to start testing your solution"
 read lmao
 user_wanted_to_try_again="y"
 while [ "$user_wanted_to_try_again" = "y" ]
 do
-	/home/alipw/Documents/CP/C++/./a.out < in.txt > out.txt
+	"$workdir/./a.out" < in.txt > out.txt
 	echo "The input : "
 	cat in.txt
 	echo ""
@@ -32,7 +33,7 @@ do
 	echo "Judge's output : "
 	cat judge.txt
 	echo ""
-	python3 /home/alipw/Documents/CP/C++/comparator.py
+	python3 "$workdir/comparator.py"
 	echo "try again? [y/n] : "
 	read user_wanted_to_try_again
 done
