@@ -13,7 +13,7 @@ filename=`cat "$workdir/filename.txt"`
 
 if [ "$2" = "y" ];
 then
-	code "$workdir/$filename"
+	subl "$workdir/$filename"
 	cp "$workdir/me.cpp" "$workdir/$filename"
 fi
 python3 "$workdir/parser.py" <$destdir
