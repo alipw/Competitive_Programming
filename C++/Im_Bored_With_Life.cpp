@@ -21,9 +21,9 @@ void printAll(vector<int> a){
 void solve(){
 	int a,b;
 	cin >> a >> b;
-	if(min(a,b) % 2 != 0) cout << min(a,b) * 2;
-	else cout << min(a,b);
-
+  int64_t ans = 1;
+  for(int i = 1; i <= min(a,b); i++) ans *= i;
+  cout << ans;
 }
 
 int main(){

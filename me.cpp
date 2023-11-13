@@ -4,11 +4,10 @@ using namespace std;
 #define MOD 1000000007
 #define ull unsigned long long int
 #define ll long long int
-#define i64 long long int
 #define umap unordered_map
-#define uset unordered_set
 #define all(a) a.begin(), a.end()
 #define rall(a) a.rbegin(), a.rend()
+#define absolute(a) sqrt((a) * (a))
 #define rep(i, n) for (int i = 0; i < (n); ++i)
 #define debug(a)                                                               \
   {                                                                            \
@@ -41,44 +40,6 @@ template <typename T, typename S> void DEBUG_PRINTER(map<T, S> var) {
     cout << "[" << it->first << "," << it->second << "]"
          << (j == var.size() - 1 ? "" : ", ");
 }
-
-template <i64 mod = MOD>
-struct ModInt{
-    i64 p;
-
-    ModInt() : p(0){}
-    ModInt(i64 x){p = x >= 0 ? x % mod : x + (-x + mod - 1) / mod * mod;}
-
-    ModInt& operator+=(const ModInt& y){p = p + *y - ((p + *y) >= mod ? mod : 0); return *this;}
-    ModInt& operator-=(const ModInt& y){p = p - *y + (p - *y < 0 ? mod : 0); return *this;}
-    ModInt& operator*=(const ModInt& y){p = (p * *y) % mod; return *this;}
-    ModInt& operator%=(const ModInt& y){if(y)p %= *y; return *this;}
-
-    ModInt operator+(const ModInt& y) const{ModInt x = *this; return x += y;}
-    ModInt operator-(const ModInt& y) const{ModInt x = *this; return x -= y;}
-    ModInt operator*(const ModInt& y) const{ModInt x = *this; return x *= y;}
-    ModInt operator%(const ModInt& y) const{ModInt x = *this; return x %= y;}
-
-    friend ostream& operator<<(ostream& stream, const ModInt<mod>& x){
-        stream << *x;
-        return stream;
-    }
-
-    friend ostream& operator>>(ostream& stream, const ModInt<mod>& x){
-        stream >> *x;
-        return stream;
-    }
-
-    ModInt& operator++(){p = (p + 1) % mod; return *this;}
-    ModInt& operator--(){p = (p - 1 + mod) % mod; return *this;}
-
-    bool operator==(const ModInt& y) const{return p == *y;}
-    bool operator!=(const ModInt& y) const{return p != *y;}
-
-    const i64& operator*() const{return p;}
-    i64& operator*(){return p;}
-
-};
 
 // end of template
 
